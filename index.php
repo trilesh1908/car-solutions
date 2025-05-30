@@ -1,111 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mauritius Road Rescue</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depanaz - Road Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-image: url('../assets/img/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .button-grid a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #4e4e4e;
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .button-grid a img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .button-grid a:hover {
+            background-color: #3c3c3c;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .call-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 18px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .call-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .call-button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+        }
+
+        .about{
+            background: red;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .registration-form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .registration-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .registration-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .registration-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .registration-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .sticky-footer-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background-color: #4e4e4e;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .sticky-footer-menu a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sticky-footer-menu a img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .sticky-footer-menu a:hover {
+            color: #ccc;
+        }
+
+    @media (max-width: 600px) {
+
+            header {
+            background-image: url('../assets/img/hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 75px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+            .button-grid {
+                display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            }
+
+            .sticky-footer-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .sticky-footer-menu a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .sticky-footer-menu a img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        .sticky-footer-menu a:hover {
+            color: #ccc;
+        }
+
+        .about {
+            background: red;
+            width: 100vw;
+            margin-left: calc(-1 * ((100vw - 100%) / 2)); /* removes side gaps */
+            padding: 40px 20px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .emoji {
+            display: inline-block;
+            animation: fadeUp 1s ease-in-out;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+    }
+
+    #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000; /* dark background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .preloader-logo {
+            width: 150px;
+            animation: fadeInScale 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        body.loaded #preloader {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .phone-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .phone-icon::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 1px;
+            width: 8px;
+            height: 14px;
+            border: 2px solid white;
+            border-radius: 2px 2px 6px 6px;
+            transform: rotate(45deg);
+            box-sizing: border-box;
+        }
+    </style>
 </head>
-<body class="bg-light">
-  <div class="container py-5">
-    <header class="text-center mb-4">
-      <h1 class="display-5 fw-bold">Depanaz</h1>
-      <p class="text-muted">Emergency Garage & Towing Services</p>
+<body>
+<div id="preloader">
+    <img src="../assets/img/depanaz-logo-white.png" alt="Depanaz Logo" class="preloader-logo">
+</div>
+<script>
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+            setTimeout(() => {
+                const preloader = document.getElementById('preloader');
+                if (preloader) preloader.remove();
+            }, 600); // remove element after fade out
+        }, 2000); // show preloader for 2 seconds
+    });
+</script>
+    <header>
+        <h1>Depanaz</h1>
+        <p>Road Assistance</p>
     </header>
-
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="card shadow rounded-4">
-          <div class="card-body">
-            <h5 class="card-title text-danger d-flex align-items-center"><i class="bi bi-exclamation-circle me-2"></i> Emergency SOS</h5>
-            <button class="btn btn-danger w-100 py-3 mt-3" onclick="alert('Emergency SOS activated! Help is on the way.')">One-Tap Emergency</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow rounded-4">
-          <div class="card-body">
-            <h5 class="card-title text-primary d-flex align-items-center"><i class="bi bi-geo-alt-fill me-2"></i> Find Nearest Garage</h5>
-            <input type="text" class="form-control my-2" id="locationInput" placeholder="Enter your location or use GPS">
-            <button class="btn btn-primary w-100" onclick="getLocationAndSearchGarage()">Locate Garage</button>
-            <div id="gpsStatus" class="text-muted small mt-2"></div>
-            <div id="garageResults" class="mt-3 text-secondary small"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow rounded-4">
-          <div class="card-body">
-            <h5 class="card-title text-success d-flex align-items-center"><i class="bi bi-truck me-2"></i> Towing & Breakdown Support</h5>
-            <button class="btn btn-success w-100 mt-3" onclick="alert('Tow truck requested. Estimated arrival: 15 minutes.')">Request Tow Truck</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="card shadow rounded-4">
-          <div class="card-body">
-            <h5 class="card-title text-warning d-flex align-items-center"><i class="bi bi-tools me-2"></i> Schedule a Repair</h5>
-            <form onsubmit="event.preventDefault(); alert('Repair appointment booked. We will contact you soon.');">
-              <input type="text" class="form-control my-2" placeholder="Describe the issue" required>
-              <button type="submit" class="btn btn-warning w-100 text-white">Book Appointment</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12">
-        <div class="card shadow rounded-4">
-          <div class="card-body">
-            <h5 class="card-title text-purple d-flex align-items-center"><i class="bi bi-telephone-fill me-2"></i> Emergency Contacts</h5>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">General Roadside Assistance: 999</li>
-              <li class="list-group-item">Police: 148</li>
-              <li class="list-group-item">Insurance Hotline: 211-HELP</li>
-              <li class="list-group-item">Nearest Partner Garage: +230 5 250 0000</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <a class="call-button" href="tel:+23059066042">
+            <i class="fa fa-phone" style="font-size:28px; color: white; margin-right: 20px;"></i> CALL FOR ASSISTANCE
+        </a>
+    <div class="button-grid">
+        <a href="#">
+            <img src="about-icon.png" alt="About Us">
+            Nearest Garage
+        </a>
+        <a href="https://carsolution.fast-page.org/nearest-garage.php">
+            <img src="garage-icon.png" alt="Nearest Garage">
+            Request Towing
+        </a>
+        <a href="#">
+            <img src="towing-icon.png" alt="Request Towing">
+            Breakdown Assistance
+        </a>
+        <a href="#">
+            <img src="location-icon.png" alt="Share My Location">
+            Share My Location
+        </a>
     </div>
 
-    <footer class="text-center text-muted mt-5">
-      &copy; 2025 Mauritius Road Rescue. All rights reserved.
+    <main>
+        <div class="about">
+            <h2>About Us</h2>
+            <img src="../assets/img/home-about.jpg" alt="About Image" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+            <p>
+                <strong>Depanaz</strong> is your trusted partner on the road, committed to help drivers across the island when it matters most. Whether you’re facing a sudden breakdown, a road accident, or just need a nearby garage, we’re here 24/7 with the support you need.
+            </p>
+            <p>
+                Founded with the mission of enhancing road safety and support road users in Mauritius, our platform connects you instantly with towing assistance, emergency garage services, verified nearby mechanics and other quick fix services all with a simple tap.
+            </p>
+            <p>
+                <strong>Why Choose Us?</strong><br>
+                <span class="emoji">✅</span> Rapid Emergency Response – One-tap SOS to dispatch help instantly.<br>
+                <span class="emoji">✅</span> Reliable Towing Services – Quick and safe transport for your vehicle.<br>
+                <span class="emoji">✅</span> Nearby Garage Locator – Find trusted repair centers wherever you are.<br>
+                <span class="emoji">✅</span> Seamless Booking – Schedule repairs with ease, even from the roadside.<br>
+                <span class="emoji">✅</span> Local Expertise – Proudly built in and for Mauritius.
+            </p>
+            <p>
+                We believe no driver should be left stranded. With <strong>Depanaz Road Assistance</strong>, peace of mind is just a tap away.
+            </p>
+        </div>
+        <div class="registration-form">
+            <h2>Register Your Vehicle!</h2>
+            <form action="register.php" method="post">
+                <div class="input-group">
+                    <input type="text" name="first_name" placeholder="👤   First Name" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="last_name" placeholder="👤   Last Name" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="vehicle_make" placeholder="🚗   Vehicle Make" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="vehicle_model" placeholder="🚙   Vehicle Model" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="vehicle_color" placeholder="🎨   Vehicle Color" required />
+                </div>
+                <div class="input-group">
+                    <input type="text" name="registration_number" placeholder="🔢   Registration Number" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="🔒   Password" required />
+                </div>
+                <div class="input-group">
+                    <input type="password" name="confirm_password" placeholder="🔒   Confirm Password" required />
+                </div>
+                <div class="terms">
+                    <label><input type="checkbox" required /> I accept the Terms and Privacy Policy</label>
+                </div>
+                <button type="submit">SIGN UP</button>
+            </form>
+        </div>
+    </main>
+    <div class="sticky-footer-menu">
+        <a href="#">
+            <img src="icon1.png" alt="Icon 1">
+            Option 1
+        </a>
+        <a href="#">
+            <img src="icon2.png" alt="Icon 2">
+            Option 2
+        </a>
+        <a href="#">
+            <img src="icon3.png" alt="Icon 3">
+            Option 3
+        </a>
+        <a href="#">
+            <img src="icon4.png" alt="Icon 4">
+            Option 4
+        </a>
+    </div>
+    <footer>
+    <div class="sticky-footer-menu">
+        <a href="#">
+            <img src="icon1.png" alt="Icon 1">
+            Option 1
+        </a>
+        <a href="#">
+            <img src="icon2.png" alt="Icon 2">
+            Option 2
+        </a>
+        <a href="#">
+            <img src="icon3.png" alt="Icon 3">
+            Option 3
+        </a>
+        <a href="#">
+            <img src="icon4.png" alt="Icon 4">
+            Option 4
+        </a>
+    </div>
     </footer>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function getLocationAndSearchGarage() {
-      const status = document.getElementById('gpsStatus');
-      const input = document.getElementById('locationInput');
-      const results = document.getElementById('garageResults');
-
-      if (navigator.geolocation) {
-        status.innerText = 'Getting your location...';
-        navigator.geolocation.getCurrentPosition((position) => {
-          const lat = position.coords.latitude;
-          const lon = position.coords.longitude;
-          input.value = `Lat: ${lat.toFixed(4)}, Lon: ${lon.toFixed(4)}`;
-          status.innerText = 'Location retrieved successfully.';
-
-          // Mock search for nearby garages using coordinates
-          results.innerHTML = '<strong>Nearest Garages:</strong><br>' +
-            '- ABC Auto Repairs (1.2km)<br>' +
-            '- FastFix Garage (2.1km)<br>' +
-            '- RoadPro Mechanics (2.4km)';
-        }, () => {
-          status.innerText = 'Unable to retrieve location.';
-          results.innerHTML = '';
-        });
-      } else {
-        status.innerText = 'Geolocation is not supported by this browser.';
-        results.innerHTML = '';
-      }
-    }
-  </script>
 </body>
 </html>
